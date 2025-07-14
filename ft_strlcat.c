@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 19:14:12 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/13 19:37:09 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/14 13:28:53 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	return (len + i);
 }
 
-int	main(void)
-{
-	char	dest[20] = "strogonoff";
-	char	*src;
+// int	main(void)
+// {
+// 	char	dest[20] = "strogo";
+// 	char	*src;
 
-	// dest = "strogonoff";
-	src = " de frango com batata palha";
-	printf("dest len: %zu\n", ft_strlcat(dest, src, 27));
-	printf("dest: %s", dest);
-	return (0);
-}
+// 	// dest = "strogonoff";
+// 	src = "noff";
+// 	printf("dest len: %zu\n", ft_strlcat(dest, src, 4));
+// 	printf("dest: %s", dest);
+// 	return (0);
+// }
