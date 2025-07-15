@@ -6,13 +6,13 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 14:16:00 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/13 14:21:38 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/15 14:56:44 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

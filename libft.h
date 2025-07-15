@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 14:07:41 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/13 18:51:12 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:50:20 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-int	isalpha(int c);
-int	ft_strlen(char *str);
+int		ft_isalpha(int c);
+int		ft_strlen(char *str);
+
+void	*ft_memset(void *p, int c, size_t n);
 
 #endif

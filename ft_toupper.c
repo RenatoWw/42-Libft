@@ -6,13 +6,13 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 13:29:41 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/14 13:56:14 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/15 14:56:41 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c > 'a' && c < 'z')
 		return (c - 32);

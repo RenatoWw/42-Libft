@@ -6,13 +6,13 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 13:32:07 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/14 13:56:13 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/15 14:56:42 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c > 'A' && c < 'Z')
 		return (c + 32);
