@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 20:25:17 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/15 21:03:44 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/16 19:52:15 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (i < len && big[i])
 	{
 		counter = 0;
-		while (little[counter])
+		while (little[counter] && (i + counter) < len)
 		{
 			if (little[counter] != big[counter + i])
 				break ;
@@ -40,9 +40,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 // int	main(void)
 // {
-// 	char	*s1 = "felipe benini benigno";
-// 	char	*s2 = "ben";
+// 	char	*s1 = "aaabcabcd";
+// 	char	*s2 = "cd";
 
-// 	printf("%s", ft_strnstr(s1, s2, 11));
+// 	printf("%d", ft_strlen(s1));
+// 	printf("%s", ft_strnstr(s1, s2, 8));
 // 	return (0);
 // }
