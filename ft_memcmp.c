@@ -1,48 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 13:52:51 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/15 21:18:56 by ranhaia-         ###   ########.fr       */
+/*   Created: 2025/07/15 19:16:36 by ranhaia-          #+#    #+#             */
+/*   Updated: 2025/07/15 20:15:39 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char			*ptr;
-	unsigned char	ch;
+	unsigned char	*first;
+	unsigned char	*second;
+	size_t			i;
 
-	ptr = (char *) s;
-	ch = (unsigned char) c;
-	while (*s)
+	first = (unsigned char *) s1;
+	second = (unsigned char *) s2;
+	i = 0;
+	while (i < n)
 	{
-		if (*s == ch)
-		{
-			ptr = (char *) s;
-			return (ptr);
-		}
-		else
-			s++;
+		if (first[i] != second[i])
+			return (first[i] - second[i]);
+		i++;
 	}
-	if (*s == '\0' && ch == '\0')
-	{
-		ptr = (char *) s;
-		return (ptr);
-	}
-	return (NULL);
+	return (0);
 }
 
 // int	main(void)
 // {
-// 	char	*str;
+// 	char	*s1 = "strogonoff de frango";
+// 	char	*s2 = "strogonoff de carne";
 
-// 	str = "tripaegtsr";
-// 	printf("%s : ", ft_strchr(str, 't' + 256));
-// 	printf("%c", 't' + 256);
+// 	printf("%d", ft_memcmp(s1, s2, 15));
 // 	return (0);
 // }

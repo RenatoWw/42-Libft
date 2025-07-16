@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 13:32:07 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/15 21:17:17 by ranhaia-         ###   ########.fr       */
+/*   Created: 2025/07/15 18:33:50 by ranhaia-          #+#    #+#             */
+/*   Updated: 2025/07/15 19:11:21 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	*ft_memchr(const void *p, int c, size_t n)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	else
-		return (c);
+	unsigned char	*searcher;
+	size_t			i;
+
+	i = 0;
+	searcher = (unsigned char *) p;
+	while (i < n)
+	{
+		if (searcher[i] == (unsigned char) c)
+		{
+			return (&searcher[i]);
+		}
+		i++;
+	}
+	return (NULL);
 }
+
+// int	main(void)
+// {
+// 	char	*s1;
+
+// 	s1 = "oieeee 42 são gonçalo";
+// 	printf("s1: %p\nmemchr: %p", &s1[7], ft_memchr(s1, '4', 3));
+// 	return (0);
+// }
