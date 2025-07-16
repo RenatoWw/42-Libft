@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 17:03:38 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/15 18:27:17 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/16 20:48:09 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*current;
-	int		found;
-	int		i;
+	unsigned char	*current;
+	int				found;
+	int				i;
 
 	i = 0;
 	found = 0;
-	current = (char *) &s[i];
+	current = (unsigned char *) &s[i];
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 		{
-			current = (char *) &s[i];
+			current = (unsigned char *) &s[i];
 			found = 1;
 		}
 		i++;
 	}
 	if (s[i] == '\0' && c == '\0')
 	{
-		current = (char *) &s[i];
+		current = (unsigned char *) &s[i];
 		found = 1;
 	}
 	if (found == 1)
-		return (current);
+		return ((char *)current);
 	else
 		return (NULL);
 }
@@ -45,7 +45,8 @@ char	*ft_strrchr(const char *s, int c)
 // {
 // 	char	*str;
 
-// 	str = "renato reneiro renate";
-// 	printf("%p\n%p", &str[20], ft_strrchr(str, 'e'));
+// 	str = "tenato reneiro renate";
+// 	printf("%c\n\n", 't' + 256);
+// 	printf("%p\n%s", &str[0], ft_strrchr(str, 't' + 256));
 // 	return (0);
 // }
