@@ -1,48 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 17:39:43 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/17 13:36:59 by ranhaia-         ###   ########.fr       */
+/*   Created: 2025/07/17 16:06:03 by ranhaia-          #+#    #+#             */
+/*   Updated: 2025/07/17 16:21:05 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	char	*newstr;
 	int		len;
+	int		i;
+	int		j;
 
-	len = 0;
-	if (size == 0)
-	{
-		while (src[len])
-			len++;
-		return (len);
-	}
+	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
+	newstr = malloc(sizeof(char) * len + 1);
+	if (newstr == NULL)
+		return (NULL);
 	i = 0;
-	while (i < (size - 1) && src[i])
+	while (s1[i])
 	{
-		dest[i] = src[i];
+		newstr[i] = s1[i];
 		i++;
 	}
-	dest[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+	j = 0;
+	while (s2[j])
+	{
+		newstr[i++] = s2[j++];
+	}
+	newstr[i] = '\0';
+	return (newstr);
 }
 
 // int	main(void)
 // {
-// 	char	dest[10];
-// 	char	*src;
-
-// 	src = "testee";
-// 	printf("src len: %zu", ft_strlcpy(dest, src, 7));
-// 	printf("\n%s", dest);
 // 	return (0);
 // }

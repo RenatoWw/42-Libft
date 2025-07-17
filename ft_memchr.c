@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:33:50 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/15 19:11:21 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/17 16:04:56 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ void	*ft_memchr(const void *p, int c, size_t n)
 // 	char	*s1;
 
 // 	s1 = "oieeee 42 são gonçalo";
-// 	printf("s1: %p\nmemchr: %p", &s1[7], ft_memchr(s1, '4', 3));
+// 	printf("s1: %p\nmemchr: %p", &s1[7], ft_memchr(s1, '4', 10));
 // 	return (0);
 // }
