@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 17:03:38 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/16 20:48:09 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/18 17:34:15 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,21 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	unsigned char	*current;
-	int				found;
 	int				i;
 
 	i = 0;
-	found = 0;
-	current = (unsigned char *) &s[i];
+	current = 0;
 	while (s[i])
 	{
 		if (s[i] == (unsigned char)c)
-		{
 			current = (unsigned char *) &s[i];
-			found = 1;
-		}
 		i++;
 	}
 	if (s[i] == '\0' && c == '\0')
-	{
 		current = (unsigned char *) &s[i];
-		found = 1;
-	}
-	if (found == 1)
+	if (current)
 		return ((char *)current);
-	else
-		return (NULL);
+	return (NULL);
 }
 
 // int	main(void)
