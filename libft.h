@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 14:07:41 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/17 16:38:13 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/18 14:42:56 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@
 # include <stdio.h>
 
 int		ft_isalpha(int c);
-int		ft_strlen(char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-int		ft_strlen(char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_strlen(const char *str);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
