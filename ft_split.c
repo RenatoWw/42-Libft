@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 13:49:17 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/21 17:39:14 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:44:23 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,24 @@ static int	count_words(char const *s, char c)
 	return (words);
 }
 
+static int	find_end(int start, char const *s, char c)
+{
+	int	end;
+
+	while (s[start] != c && s[start] != '\0')
+	{
+		if (s[start + 1] == c || s[start + 1] == '\0')
+			end = start;
+		start++;
+	}
+	return (end);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**words;
 	int		word_count;
 	int		start;
-	int		j;
 	int		end;
 
 	words = malloc((count_words(s, c) + 1) * sizeof(char *));
@@ -48,15 +60,10 @@ char	**ft_split(char const *s, char c)
 	word_count = 0;
 	while (s[start])
 	{
-		if ((start == 0 && s[start] != c) || (s[start] != c && s[start - 1] == c))
+		if ((start == 0 && s[start] != c)
+			|| (s[start] != c && s[start - 1] == c))
 		{
-			j = start;
-			while (s[j] != c && s[j] != '\0')
-			{
-				if (s[j + 1] == c || s[j + 1] == '\0')
-					end = j;
-				j++;
-			}
+			end = find_end(start, s, c);
 			words[word_count] = ft_calloc(end - start + 2, sizeof(char));
 			ft_memcpy(words[word_count++], &s[start], end - start + 1);
 		}
