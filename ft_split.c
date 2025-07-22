@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 13:49:17 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/21 17:44:23 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/22 15:33:55 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,19 @@ static int	find_end(int start, char const *s, char c)
 	return (end);
 }
 
+static void	free_mem(char **words)
+{
+	int	i;
+
+	i = 0;
+	while (words[i] != NULL)
+	{
+		free(words[i]);
+		i++;
+	}
+	free(words);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**words;
@@ -56,6 +69,8 @@ char	**ft_split(char const *s, char c)
 	int		end;
 
 	words = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (words == NULL)
+		free_mem(words);
 	start = 0;
 	word_count = 0;
 	while (s[start])
@@ -65,6 +80,8 @@ char	**ft_split(char const *s, char c)
 		{
 			end = find_end(start, s, c);
 			words[word_count] = ft_calloc(end - start + 2, sizeof(char));
+			if (words[word_count] == NULL)
+				free_mem(words);
 			ft_memcpy(words[word_count++], &s[start], end - start + 1);
 		}
 		start++;
@@ -79,9 +96,8 @@ char	**ft_split(char const *s, char c)
 // 	char	**words;
 // 	int		start;
 
-// 	// s1 = ";;;42;;sao;;;;goncalo;;renato";
-// 	s1 = "Tripouille";
-// 	words = ft_split(s1, ' ');
+// 	s1 = "42;;sao;;;;goncalo;;renato;;;";
+// 	words = ft_split(s1, ';');
 // 	start = 0;
 // 	while (words[start])
 // 	{
@@ -89,6 +105,5 @@ char	**ft_split(char const *s, char c)
 // 		start++;
 // 	}
 // 	printf("%s", words[start]);
-// 	// printf("%c, %d", words[1][2], words[1][2]);
 // 	return (0);
 // }
