@@ -6,29 +6,35 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 16:19:40 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/13 17:38:59 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/23 18:15:36 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static void	swap(unsigned char *dest, unsigned char *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+}
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*dest_cast;
 	unsigned char	*src_cast;
-	size_t			i;
 
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	dest_cast = (unsigned char *) dest;
 	src_cast = (unsigned char *) src;
 	if (dest_cast <= src_cast)
-	{
-		i = 0;
-		while (i < n)
-		{
-			dest_cast[i] = src_cast[i];
-			i++;
-		}
-	}
+		swap(dest_cast, src_cast, n);
 	else if (dest_cast > src_cast)
 	{
 		while (n > 0)

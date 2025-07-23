@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:38:16 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/16 19:07:46 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/23 20:43:30 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,33 +42,14 @@ int	ft_atoi(const char *str)
 
 // int	main(void)
 // {
-// 	char	*num;
+// 	// char	*num;
 
-// 	num = "-1";
-// 	printf("%d", ft_atoi(num));
-// 	// printf("%d\n", ft_atoi(" "));
-// 	// printf("%d\n", ft_atoi("+"));
-// 	// printf("%d\n", ft_atoi("-"));
-// 	// printf("%d\n", ft_atoi(NULL));
+// 	// num = "-1";
+// 	// printf("%d\n", ft_atoi(num));
 
-// 	// printf("\n%d\n", ft_atoi("42a54"));
-// 	// printf("%d\n", ft_atoi("-42b54"));
-// 	// printf("%d\n", ft_atoi("a42"));
-// 	// printf("%d\n", ft_atoi("a-42"));
-// 	// printf("%d\n", ft_atoi("+-42"));
-// 	// printf("%d\n", ft_atoi("-+42"));
-// 	// printf("%d\n", ft_atoi("--42"));
-
-// 	// printf("\n%d\n", ft_atoi(" 42"));
-// 	// printf("%d\n", ft_atoi(" -42"));
-// 	// printf("%d\n", ft_atoi(" +42"));
-// 	// printf("%d\n", ft_atoi("\t\n\v\f\r 42"));
-// 	// printf("%d\n", ft_atoi("42 "));
-
-// 	// printf("\n%d\n", ft_atoi("2147483647"));
-// 	// printf("%d\n", ft_atoi("-2147483648"));
-// 	// printf("%d\n", ft_atoi("2147483648"));
-// 	// printf("%d\n", ft_atoi("-2147483649"));
-// 	// printf("%d\n", ft_atoi("9999999999"));
+// 	printf("ft:   %d\n", ft_atoi(((void*)0)));
+// 	printf("atoi: %d\n", ft_atoi(((void*)0)));
+// 	printf("ft:   %d\n", ft_atoi("\t\n\v\f\r + 42"));
+// 	printf("atoi: %d\n", ft_atoi("\t\n\v\f\r + 42"));
 // 	return (0);
 // }

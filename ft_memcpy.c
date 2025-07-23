@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 16:08:48 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/13 16:19:22 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/23 18:00:42 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t			i;
 
 	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	dest_cast = (unsigned char *) dest;
 	src_cast = (unsigned char *) src;
 	while (i < n)
