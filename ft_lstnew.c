@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 17:56:50 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/22 21:25:35 by ranhaia-         ###   ########.fr       */
+/*   Created: 2025/07/22 19:22:27 by ranhaia-          #+#    #+#             */
+/*   Updated: 2025/07/22 21:26:10 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// static char	funcao(unsigned int n, char c)
-// {
-// 	return (n + c);
-// }
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstnew(void *content)
 {
-	unsigned int		i;
-	char				*newstr;
+	t_list	*newlist;
 
-	newstr = ft_calloc(ft_strlen(s) + 1, sizeof(char));
-	if (newstr == NULL)
+	newlist = malloc(sizeof(t_list));
+	if (newlist == NULL)
 		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		newstr[i] = f(i, s[i]);
-		i++;
-	}
-	return (newstr);
+	newlist->content = content;
+	newlist->next = NULL;
+	return (newlist);
 }
 
 // int	main(void)
 // {
-// 	char	*str;
-
-// 	str = "renato";
-// 	printf("%s", ft_strmapi(str, funcao));
+// 	ft_lstnew("oi");
 // 	return (0);
 // }

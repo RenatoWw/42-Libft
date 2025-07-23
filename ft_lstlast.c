@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 14:09:38 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/22 20:24:18 by ranhaia-         ###   ########.fr       */
+/*   Created: 2025/07/22 21:45:17 by ranhaia-          #+#    #+#             */
+/*   Updated: 2025/07/22 21:46:43 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0);
+	t_list	*last;
+
+	last = lst;
+	while (last->next == NULL)
+	{
+		last = last->next;
+	}
+	return (last);
 }

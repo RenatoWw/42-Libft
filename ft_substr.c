@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 15:40:08 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/18 16:22:52 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/22 20:38:03 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*newstring;
-	size_t			i;
 	size_t			newlen;
 	unsigned int	strlen;
 
@@ -28,7 +27,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	newstring = ft_calloc(len + 1, sizeof(char));
 	if (newstring == NULL)
 		return (NULL);
-	i = 0;
 	ft_strlcpy(newstring, s + start, len + 1);
 	return (newstring);
 }
