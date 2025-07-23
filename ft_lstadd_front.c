@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 20:49:22 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/22 21:44:57 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/23 13:58:33 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,28 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
+// static void	print_list(t_list *list)
+// {
+// 	while (list != NULL)
+// 	{
+// 		printf("%s\n", (char *)list->content);
+// 		list = list->next;
+// 	}
+// }
+
 // int	main(void)
 // {
-// 	t_list	*list;
 // 	t_list	*new;
 
 // 	new = ft_lstnew("42");
-// 	list = ft_lstnew("renato");
-// 	ft_lstadd_front(&list, new);
-// 	printf("%s\n", (char *)list->content);
-// 	// list = list->next;
-// 	printf("%s\n", (char *)list->content);
-// 	new = ft_lstnew("renato");
-// 	ft_lstadd_front(&list, new);
-// 	new = ft_lstnew("quarenta e dois");
-// 	ft_lstadd_front(&list, new);
-// 	// list = list->next;
-// 	// printf("%p\n", list);
-// 	printf("size: %d\n", ft_lstsize(list));
+// 	new->next = ft_lstnew("renato");
+// 	new->next->next = ft_lstnew("quarenta e dois");
+// 	while (new != NULL)
+// 		new = new->next;
+// 	new = ft_lstnew("teste");
+// 	ft_lstadd_back(&new, ft_lstnew("banana"));
+// 	ft_lstadd_back(&new, ft_lstnew("açaí"));
+// 	// ft_lstlast(new);
+// 	print_list(new);
+// 	printf("size: %d\n", ft_lstsize(new));
 // }

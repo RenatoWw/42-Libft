@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 21:49:06 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/23 14:18:43 by ranhaia-         ###   ########.fr       */
+/*   Created: 2025/07/23 17:08:58 by ranhaia-          #+#    #+#             */
+/*   Updated: 2025/07/23 17:18:41 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*last;
+	t_list	*newlist;
 
-	if (*lst == NULL)
+	if (lst == NULL)
+		return (NULL);
+	while (lst != NULL)
 	{
-		*lst = new;
-		return ;
+
 	}
-	last = *lst;
-	while (last->next != NULL)
-		last = last->next;
-	last->next = new;
 }

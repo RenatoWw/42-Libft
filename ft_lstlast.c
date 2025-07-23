@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 21:45:17 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/22 21:46:43 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:03:21 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*last;
+	t_list	*current;
 
-	last = lst;
-	while (last->next == NULL)
-	{
-		last = last->next;
-	}
-	return (last);
+	if (lst == NULL)
+		return (NULL);
+	current = lst;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = NULL;
+	return (current);
 }
