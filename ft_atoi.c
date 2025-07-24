@@ -5,39 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/16 13:38:16 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/23 20:43:30 by ranhaia-         ###   ########.fr       */
+/*   Created: 2025/07/24 13:54:50 by ranhaia-          #+#    #+#             */
+/*   Updated: 2025/07/24 13:55:43 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
-	int		signal;
-	long	num;
+	int	signal;
+	int	num;
 
-	signal = 0;
+	signal = 1;
 	num = 0;
-	if (str == NULL)
-		return (0);
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (*str == '-')
-			signal = 1;
-		str++;
+		if (*nptr == '-')
+			signal *= -1;
+		nptr++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		num *= 10;
-		num += *str - '0';
-		str++;
+		num = (num * 10) + *nptr++ - '0';
 	}
-	if (signal == 1)
-		num *= -1;
-	return (num);
+	return (num * signal);
 }
 
 // int	main(void)
@@ -47,9 +41,9 @@ int	ft_atoi(const char *str)
 // 	// num = "-1";
 // 	// printf("%d\n", ft_atoi(num));
 
-// 	printf("ft:   %d\n", ft_atoi(((void*)0)));
-// 	printf("atoi: %d\n", ft_atoi(((void*)0)));
+// 	printf("ft:   %d\n", ft_atoi("+\t\v\f\r\n \f1234"));
+// 	printf("atoi: %d\n", atoi("+\t\v\f\r\n \f1234"));
 // 	printf("ft:   %d\n", ft_atoi("\t\n\v\f\r + 42"));
-// 	printf("atoi: %d\n", ft_atoi("\t\n\v\f\r + 42"));
+// 	printf("atoi: %d\n", atoi("\t\n\v\f\r + 42"));
 // 	return (0);
 // }

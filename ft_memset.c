@@ -6,18 +6,18 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 14:23:52 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/13 15:57:14 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:47:28 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *p, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*cast;
 	size_t			i;
 
-	cast = (unsigned char *)p;
+	cast = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{

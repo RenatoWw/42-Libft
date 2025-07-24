@@ -6,57 +6,49 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 16:25:49 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/21 13:46:47 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:52:17 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in_charset(char c, char const *set)
+static int	ischarset(char c, char const *set)
 {
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
+	while (*set)
+		if (c == *set++)
 			return (1);
-		i++;
-	}
 	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*newstr;
+	int		len;
 	int		i;
-	int		size;
-	int		j;
-	char	*trimmed;
 
 	i = 0;
-	size = 0;
-	while (s1[i])
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	while (*s1)
 	{
-		if (is_in_charset(s1[i], set) == 0)
-			size++;
-		i++;
+		if (ischarset(*s1, set) == 1)
+			s1++;
+		else
+			break ;
 	}
-	trimmed = malloc(sizeof(char) * size + 1);
-	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		if (is_in_charset(s1[i], set) == 0)
-			trimmed[j++] = s1[i];
-		i++;
-	}
-	trimmed[j] = '\0';
-	return (trimmed);
+	len = ft_strlen(s1);
+	if (len == 0)
+		return (ft_strdup(""));
+	while (ischarset(s1[len - 1], set) == 1)
+		len--;
+	newstr = ft_calloc(len + 1, sizeof(char));
+	if (newstr == NULL)
+		return (NULL);
+	return (ft_memcpy(newstr, s1, len));
 }
 
 // int	main(void)
 // {
-// 	printf("%s\n", ft_strtrim("#$#$42 são gonçalo#$#$", "#$"));
-// 	ft_strtrim("#$#$renato#$#$", "#$");
+// 	printf("%s\n", ft_strtrim("#$#$renato#$#$", "#$"));
 // 	return (0);
 // }

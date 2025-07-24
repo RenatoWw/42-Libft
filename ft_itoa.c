@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 14:38:44 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/22 16:29:24 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:20:22 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,16 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	negative = 0;
+	len = digits(nb);
 	if (nb < 0)
 	{
 		negative = 1;
 		nb = -nb;
-		len = digits(nb) + 1;
+		len++;
 	}
-	else
-		len = digits(nb);
-	num = malloc((len + 1) * sizeof(char));
-	num[len] = '\0';
+	num = ft_calloc(len + 1, sizeof(char));
+	if (num == NULL)
+		return (NULL);
 	while (len > 0)
 	{
 		num[--len] = (nb % 10) + '0';

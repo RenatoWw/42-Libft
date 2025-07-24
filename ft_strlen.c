@@ -6,13 +6,13 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 14:21:53 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/18 14:41:57 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:46:36 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	len;
 
