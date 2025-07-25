@@ -6,7 +6,7 @@
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 14:43:07 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/16 18:30:57 by ranhaia-         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:42:03 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	unsigned char	*allocator;
 
 	if (size == 0 || nmemb == 0)
-		return (malloc(0));
+		return (malloc(1));
 	max = (size_t)-1 / size;
 	if (nmemb > max)
 		return (NULL);

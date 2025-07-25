@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ranhaia- <ranhaia-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 13:49:17 by ranhaia-          #+#    #+#             */
-/*   Updated: 2025/07/24 15:39:29 by ranhaia-         ###   ########.fr       */
+/*   Created: 2025/07/25 13:20:26 by ranhaia-          #+#    #+#             */
+/*   Updated: 2025/07/25 13:35:36 by ranhaia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ static int	count_words(char const *s, char c)
 	return (words);
 }
 
-static int	find_end(int start, char const *s, char c)
+static int	find_end(int index, char const *s, char c)
 {
 	int	end;
 
-	while (s[start] != c && s[start] != '\0')
+	while (s[index] != c && s[index] != '\0')
 	{
-		if (s[start + 1] == c || s[start + 1] == '\0')
-			end = start;
-		start++;
+		if (s[index + 1] == c || s[index + 1] == '\0')
+			end = index;
+		index++;
 	}
 	return (end);
 }
@@ -54,10 +54,7 @@ static char	**free_mem(char **words)
 
 	i = 0;
 	while (words[i] != NULL)
-	{
-		free(words[i]);
-		i++;
-	}
+		free(words[i++]);
 	free(words);
 	return (NULL);
 }
@@ -74,37 +71,36 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	start = 0;
 	word_count = 0;
+	while (s[start] == c && s[start])
+		start++;
 	while (s[start])
 	{
-		if ((start == 0 && s[start] != c)
-			|| (s[start] != c && s[start - 1] == c))
-		{
-			end = find_end(start, s, c);
-			words[word_count] = ft_calloc(end - start + 2, sizeof(char));
-			if (!words[word_count])
-				return (free_mem(words));
-			ft_memcpy(words[word_count++], &s[start], end - start + 1);
-		}
-		start++;
+		end = find_end(start, s, c);
+		words[word_count] = ft_substr(s, start, end - start + 1);
+		if (!words[word_count++])
+			return (free_mem(words));
+		while (s[start] != c && s[start])
+			start++;
+		while (s[start] == c && s[start])
+			start++;
 	}
 	return (words);
 }
 
 // int	main(void)
 // {
-// 	char	**result;
+// 	char	**words;
 // 	char	*s1;
+// 	int		start;
 
+// 	start = 0;
 // 	s1 = "      split       this for   me  !       ";
-// 	result = ft_split(s1, ' ');
-// 	if (!result)
-// 		printf("sucesso");
-// 	printf("erro");
-// 	// while (words[start])
-// 	// {
-// 	// 	printf("%s", words[start]);
-// 	// 	start++;
-// 	// }
-// 	// printf("%s", words[start]);
+// 	words = ft_split(s1, ' ');
+// 	while (words[start])
+// 	{
+// 		printf("%s", words[start]);
+// 		start++;
+// 	}
+// 	printf("%s", words[start]);
 // 	return (0);
 // }
